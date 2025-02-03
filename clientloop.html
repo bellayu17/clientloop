@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientloop - AI for Client Relationship</title>
+    <link rel="stylesheet" href="clientloop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-video video {
+            max-width: 100%;
+            height: auto;
+            width: 48%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+        .partners {
+            padding: 4rem 2rem;
+            background: #f0f9ff;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .partners h2 {
+            margin-bottom: 2rem;
+        }
+        .partners-container {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 10s linear infinite;
+        }
+        .partner-logo {
+            flex: 0 0 auto;
+            width: 150px;
+            height: auto;
+        }
+        .partner-logo1{
+            width: 15%;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .demo-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f7f7f7;
+        }
+        .demo-section h2 {
+            margin-bottom: 1rem;
+        }
+        .demo-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .demo-form input {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 70%;
+        }
+        .demo-form button {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 4px;
+            background: #64d68a;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .demo-form button:hover {
+            background: #4daf6e;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Clientloop</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="login.html" class="btn-primary">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Boost your client management with us</h1>
+            <p>AI Agent streamlines hyper-personalized client management--auto-draft & auto-sync follow-up communications across platforms.</p>
+        </div>
+        <div class="hero-video">
+            <video controls autoplay muted loop>
+                <source src="clientloop1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2>Want a Demo?</h2>
+        <p>Enter your email to schedule a free demo.</p>
+        <form class="demo-form" id="demo-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Request Demo</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("demo-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyPxKb5c3Oi8Ntr9YC2gBuVg_CvEv2jvIwbQmE6qC6PuzCrfBqfgpL09M-Hg_qnoQeOlA/exec';
+            
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new URLSearchParams({"email": email})
+            })
+            .then(response => alert("Thank you! Your request has been submitted."))
+            .catch(error => console.error("Error!", error.message));
+        });
+    </script>
+    <!-- <section class="partners">
+        <h2>Our Partners & Clients</h2>
+        <div class="partners-container">
+            <img src="fox.png" alt="Partner 1" class="partner-logo">
+            <img src="salesforce.png" alt="Partner 2" class="partner-logo">
+            <img src="github.png" alt="Partner 3" class="partner-logo1">
+            <img src="microsoft.jpg" alt="Partner 4" class="partner-logo">
+        </div>
+    </section> -->
+
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature" data-aos="fade-up">
+                <h3>Personalized Messaging</h3>
+                <p>Generates thoughtful, individualized messages that sound person to person instead of machine generated.</p>
+            </div>
+            <div class="feature" data-aos="fade-up">
+                <h3>Multi-Channel Auto-Sync</h3>
+                <p>Users can send messages via SMS, email, or even physical greeting cards that are automatically generated and synced.</p>
+            </div>
+            <div class="feature" data-aos="fade-up">
+                <h3>Seamlessly scale</h3>
+                <p>Ability to send messages to 100's of clients with a click of a button.  Never miss a birthday, holiday or a client sync.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <p>Discover how Clientloop simplifies your workflow in just a few steps.</p>
+        <div class="steps-container">
+            <div class="step">
+                <span class="step-number">1</span>
+                <p>Connect your contacts automatically from SMS, email, multi-communication channels.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <p>Set details about your clients, e.g. their hobbies, past interactions, purchases.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <p>Let Clientloop optimize the way to maintain a strong client relationship.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>Pricing</h2>
+        <div class="pricing-plans">
+            <div class="plan">
+                <h3>Basic</h3>
+                <p>$10/month</p>
+                <ul>
+                    <li>Limited Usage</li>
+                    <li>Basic functionalities</li>
+                </ul>
+                <a href="login.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>Premium</h3>
+                <p>$35/month</p>
+                <ul>
+                    <li>All Basic features</li>
+                    <li>Advanced multi-channel auto-sync</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="login.html" class="btn-primary">Subscribe Now</a>
+            </div>
+            <div class="plan">
+                <h3>Enterprise</h3>
+                <p>$$$</p>
+                <ul>
+                    <li>All Basic features</li>
+                    <li>All Premium features</li>
+                    <li>Unlimited Usage</li>
+                </ul>
+                <a href="login.html" class="btn-primary">Subscribe Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Clientloop. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
