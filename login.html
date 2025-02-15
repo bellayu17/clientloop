@@ -57,47 +57,34 @@
         .btn:hover {
             background: #4daf6e;
         }
-        .toggle-link {
-            display: block;
-            margin-top: 1rem;
-            color: #64d68a;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <div class="container" id="auth-container">
-        <h2 id="form-title">Login</h2>
-        <form id="auth-form">
+    <div class="container">
+        <h2>Your Email</h2>
+        <form id="demo-form">
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <span class="toggle-link" onclick="toggleForm()">Don't have an account? Sign Up</span>
+            <input type="hidden" id="pricing-tier" value="">
+            <button type="submit" class="btn">Book a Demo</button>
         </form>
     </div>
 
     <script>
-        function toggleForm() {
-            const formTitle = document.getElementById("form-title");
-            const submitButton = document.querySelector(".btn");
-            const toggleText = document.querySelector(".toggle-link");
+        document.getElementById("demo-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyPxKb5c3Oi8Ntr9YC2gBuVg_CvEv2jvIwbQmE6qC6PuzCrfBqfgpL09M-Hg_qnoQeOlA/exec';
             
-            if (formTitle.innerText === "Login") {
-                formTitle.innerText = "Sign Up";
-                submitButton.innerText = "Sign Up";
-                toggleText.innerText = "Already have an account? Login";
-            } else {
-                formTitle.innerText = "Login";
-                submitButton.innerText = "Login";
-                toggleText.innerText = "Don't have an account? Sign Up";
-            }
-        }
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new URLSearchParams({"email": email})
+            })
+            .then(response => alert("Thank you! Your request has been submitted."))
+            .catch(error => console.error("Error!", error.message));
+        });
     </script>
 </body>
 </html>
