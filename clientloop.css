@@ -247,11 +247,11 @@ body {
 }
 
 .footer {
-    background: #f7f7f7;
+    height: 60vh;
+    background: linear-gradient(145deg, #e6fff1, #ffffff);
+    padding: 3rem 2rem;
     text-align: center;
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
-    color: #555;
+    color: #333;
 }
 
 .footer-links {
@@ -271,4 +271,48 @@ body {
 
 .footer-links a:hover {
     color: #64d68a;
+}
+
+.newsletter-footer {
+    background: linear-gradient(135deg, #d0f5dc, #b2eac9); /* light green gradient */
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.newsletter-content h3 {
+    font-size: 2rem;
+    color: #2e7d4f;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-content p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1 1 250px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
 }
