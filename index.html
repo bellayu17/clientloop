@@ -18,10 +18,16 @@
     </script>
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
             margin: 0;
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .hero {
@@ -710,6 +716,40 @@
 .highlighted {
   color: #64d68a;
   font-weight: 600;
+}
+@media (max-width: 375px) {
+    .hero{
+        padding-top: 5rem;
+    }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .cta-image {
+    max-width: 80%;
+  }
+
+  .metric-box {
+    padding: 1.5rem;
+    min-width: 0;
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
 }
  </style>
 
